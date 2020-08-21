@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import * as Location from "expo-location";
+import { AppLoading } from "expo";
 
 export default function App() {
+  useEffect(() => {
+    load();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hello there!</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,8 +20,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
